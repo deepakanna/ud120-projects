@@ -41,11 +41,11 @@ t0 = time()
 #features_train = features_train[:int(len(features_train)/100)]
 #labels_train = labels_train[:int(len(labels_train)/100)]
 clf.fit(features_train,labels_train)
-print(("Training Time:", round(time()-t0, 3), "s"))
+print("Training Time:", round(time()-t0, 3), "s")
 
 t0=time()
 pred=clf.predict(features_test)
-print(("Predicting Time:", round(time()-t0, 3), "s"))
+print("Predicting Time:", round(time()-t0, 3), "s")
 acc=accuracy_score(pred,labels_test)
 print(acc)
 a1=pred[10]
@@ -55,5 +55,5 @@ print(a1)
 print(a2)
 print(a3)
 rep=classification_report(labels_test,pred)
-print((sum(pred)))
+print(sum(pred))
 #########################################################

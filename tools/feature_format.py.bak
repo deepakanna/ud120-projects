@@ -59,7 +59,7 @@ def featureFormat( dictionary, features, remove_NaN=True, remove_all_zeroes=True
     elif sort_keys:
         keys = sorted(dictionary.keys())
     else:
-        keys = list(dictionary.keys())
+        keys = dictionary.keys()
 
     for key in keys:
         tmp_list = []
@@ -67,7 +67,7 @@ def featureFormat( dictionary, features, remove_NaN=True, remove_all_zeroes=True
             try:
                 dictionary[key][feature]
             except KeyError:
-                print(("Error: Key ", feature, " Not Present"))
+                print("Error: Key ", feature, " Not Present")
                 return
             value = dictionary[key][feature]
             if value == 'NaN' and remove_NaN:

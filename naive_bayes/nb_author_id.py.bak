@@ -41,11 +41,11 @@ The Following Code is Python-3 version of the same code
 t0 = time()
 # < your clf.fit() line of code >
 clf.fit(features_train,labels_train)
-print(("Training Time:", round(time()-t0, 3), "s"))
+print("Training Time:", round(time()-t0, 3), "s")
 
 t0 = time()
 # # < your clf.predict() line of code >
 pred=clf.predict(features_test)
-print(("Predicting Time:", round(time()-t0, 3), "s"))
-print((accuracy_score(pred,labels_test)))
+print("Predicting Time:", round(time()-t0, 3), "s")
+print(accuracy_score(pred,labels_test))
 ##############################################################
