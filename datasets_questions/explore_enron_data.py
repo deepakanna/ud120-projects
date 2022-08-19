@@ -14,9 +14,9 @@
     enron_data["SKILLING JEFFREY K"]["bonus"] = 5600000
     
 """
-import pickle
+#import pickle
 
-enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "rb"))
+#enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "rb"))
 import joblib
 
 enron_data = joblib.load(open("../final_project/final_project_dataset.pkl", "rb"))
