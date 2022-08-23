@@ -11,9 +11,44 @@ from feature_format import featureFormat, targetFeatureSplit
 data_dict = joblib.load( open("../final_project/final_project_dataset_unix.pkl", "rb") )
 features = ["salary", "bonus"]
 data = featureFormat(data_dict, features)
-
-
+print(data_dict)
 ### your code below
+for i in data:
+    salary=i[0]
+    bonus=i[1]
+    matplotlib.pyplot.scatter(salary,bonus)
 
+matplotlib.pyplot.xlabel("Salary")
+matplotlib.pyplot.ylabel("Bonus")
+matplotlib.pyplot.show()
+#print(o)
+b=1
+print("length is",len(data_dict))
+for i in data_dict:
+#    if(data_dict[i]['salary']>250000):
+     #if(data_dict[i]['bonus']!='NaN' and data_dict[i]['bonus']>100000):
+   if(data_dict[i]['bonus']!='NaN' and int(data_dict[i]['bonus'])>b):
+        b=int(data_dict[i]['bonus'])
+        ind=i
+print(b)
+print(ind)
+data_dict.pop(ind,0)
+print("length is",len(data_dict))
 
+data = featureFormat(data_dict, features)
+for i in data:
+    salary=i[0]
+    bonus=i[1]
+    matplotlib.pyplot.scatter(salary,bonus)
 
+matplotlib.pyplot.xlabel("Salary")
+matplotlib.pyplot.ylabel("Bonus")
+matplotlib.pyplot.show()
+
+names=[]
+for i in data_dict:
+#    if(data_dict[i]['salary']>250000):
+     #if(data_dict[i]['bonus']!='NaN' and data_dict[i]['bonus']>100000):
+   if(data_dict[i]['bonus']!='NaN' and int(data_dict[i]['bonus'])>5000000) and (data_dict[i]['salary']!='NaN' and int(data_dict[i]['salary'])>1000000):
+        names.append(i)
+print(names)
