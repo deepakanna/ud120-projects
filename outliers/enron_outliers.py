@@ -52,3 +52,26 @@ for i in data_dict:
    if(data_dict[i]['bonus']!='NaN' and int(data_dict[i]['bonus'])>5000000) and (data_dict[i]['salary']!='NaN' and int(data_dict[i]['salary'])>1000000):
         names.append(i)
 print(names)
+mm=0
+import math
+mn=math.inf
+for i in data_dict:
+    if(data_dict[i]["exercised_stock_options"]!='NaN'):
+        if(data_dict[i]["exercised_stock_options"]>mm):
+            mm=data_dict[i]["exercised_stock_options"]
+        if (data_dict[i]["exercised_stock_options"] < mn):
+            mn = data_dict[i]["exercised_stock_options"]
+
+print(mm,"  ",mn)
+
+mm=0
+import math
+mn=math.inf
+for i in data_dict:
+    if(data_dict[i]["salary"]!='NaN'):
+        if(data_dict[i]["salary"]>mm):
+            mm=data_dict[i]["salary"]
+        if (data_dict[i]["salary"] < mn):
+            mn = data_dict[i]["salary"]
+
+print(mm,"  ",mn)
