@@ -63,8 +63,18 @@ plt.show()
 from sklearn.cluster import KMeans
 kmeans=KMeans(n_clusters=2).fit(data)
 pred=kmeans.predict(data)
+a=[]
+from sklearn.preprocessing import MinMaxScaler
+scaler=MinMaxScaler()
+j=0
+for i in data_dict:
+    a.append(float(data_dict[i]['salary']))
 
-
+    print(a)
+sal=[min(a),200000.0,max(a)]
+sal=numpy.array([[e] for e in sal])
+rescaler=scaler.fit_transform(sal)
+print(rescaler)
 ### rename the "name" parameter when you change the number of features
 ### so that the figure gets saved to a different file
 try:
